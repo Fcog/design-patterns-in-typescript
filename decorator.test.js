@@ -32,3 +32,13 @@ test('SugarDecorator should return the cost and description of a coffee with a s
   expect(sugarDecorator.cost()).toBe(11);
   expect(sugarDecorator.description()).toBe('Simple coffee with sugar');
 });
+
+test('stacked decorators: coffee with milk and sugar (MilkDecorator wraps SugarDecorator wraps SimpleCoffee)', () => {
+  const coffeeWithMilkAndSugar = new MilkDecorator(
+    new SugarDecorator(new SimpleCoffee())
+  );
+  expect(coffeeWithMilkAndSugar.cost()).toBe(13); // 10 + 1 (sugar) + 2 (milk)
+  expect(coffeeWithMilkAndSugar.description()).toBe(
+    'Simple coffee with sugar with milk'
+  );
+});
