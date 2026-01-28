@@ -11,6 +11,7 @@ interface Vehicle {
     stop(): void;
 }
 
+/** Concrete vehicle: car. */
 class Car implements Vehicle {
     name: string;
     constructor(name: string) {
@@ -24,6 +25,7 @@ class Car implements Vehicle {
     }
 }
 
+/** Concrete vehicle: bike. */
 class Bike implements Vehicle {
     name: string;
     constructor(name: string) {
@@ -37,6 +39,7 @@ class Bike implements Vehicle {
     }
 }
 
+/** Creates Vehicle instances (Car or Bike) by type. */
 class VehicleFactory {
     createVehicle(type: string, name: string): Vehicle {
         switch (type) {

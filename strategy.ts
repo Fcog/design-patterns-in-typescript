@@ -9,24 +9,28 @@ interface PaymentStrategy {
     process(amount: number): string;
 }
 
+/** Payment strategy: credit card. */
 class CreditCardPayment implements PaymentStrategy {
     process(amount: number): string {
         return `Processing credit card payment of ${amount}`;
     }
 }
 
+/** Payment strategy: PayPal. */
 class PayPalPayment implements PaymentStrategy {
     process(amount: number): string {
         return `Processing PayPal payment of ${amount}`;
     }
 }
 
+/** Payment strategy: crypto. */
 class CryptoPayment implements PaymentStrategy {
     process(amount: number): string {
         return `Processing crypto payment of ${amount}`;
     }
 }
 
+/** Context that uses a PaymentStrategy; can swap strategy at runtime via setStrategy. */
 class PaymentProcessor {
     private strategy: PaymentStrategy;
 

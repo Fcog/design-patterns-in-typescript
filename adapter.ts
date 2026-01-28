@@ -10,6 +10,7 @@ interface OldPaymentProcessor {
     getPaymentStatus(): string;
 }
 
+/** Legacy payment processor; interface uses processPayment, getTransactionId, getPaymentStatus. */
 class OldPaymentProcessor implements OldPaymentProcessor {
     processPayment(amount: number): string {
         return `Processing payment of ${amount}`;
@@ -22,13 +23,14 @@ class OldPaymentProcessor implements OldPaymentProcessor {
     }
 }
 
-// Different interface for new payment processor
+/** Different interface for new payment processor; interface uses process, getTransId, getPayStatus. */
 interface NewPaymentProcessor {
     process(amount: number): string;
     getTransId(): string;
     getPayStatus(): string;
 }
 
+/** New payment processor; interface uses process, getTransId, getPayStatus. */
 class NewPaymentProcessor implements NewPaymentProcessor {
     process(amount: number): string {
         return `Processing payment of ${amount}`;
@@ -41,6 +43,7 @@ class NewPaymentProcessor implements NewPaymentProcessor {
     }
 }
 
+/** Adapts OldPaymentProcessor to the NewPaymentProcessor interface so clients can use the new API. */
 class PaymentAdapter implements NewPaymentProcessor {
     private oldPaymentProcessor: OldPaymentProcessor;
     constructor(oldPaymentProcessor: OldPaymentProcessor) {
