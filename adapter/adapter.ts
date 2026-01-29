@@ -61,3 +61,4 @@ class PaymentAdapter implements NewPaymentProcessor {
 }
 
 export { OldPaymentProcessor, NewPaymentProcessor, PaymentAdapter };
+

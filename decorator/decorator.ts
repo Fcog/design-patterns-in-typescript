@@ -60,3 +60,4 @@ class SugarDecorator extends CoffeeDecorator {
 // stacked.description() // 'Simple coffee with sugar with milk'
 
 export { SimpleCoffee, CoffeeDecorator, MilkDecorator, SugarDecorator };
+

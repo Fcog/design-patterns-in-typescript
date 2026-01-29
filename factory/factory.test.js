@@ -12,3 +12,4 @@ test('VehicleFactory should create vehicles', () => {
   bike.start();
   bike.stop();
 });
+

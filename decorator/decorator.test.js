@@ -42,3 +42,4 @@ test('stacked decorators: coffee with milk and sugar (MilkDecorator wraps SugarD
     'Simple coffee with sugar with milk'
   );
 });
+

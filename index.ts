@@ -1,5 +1,5 @@
 // index.ts
-import { CreditCardPayment, PayPalPayment, CryptoPayment, PaymentProcessor } from './strategy.js';
+import { CreditCardPayment, PayPalPayment, CryptoPayment, PaymentProcessor } from './strategy/strategy.js';
 
 const processor = new PaymentProcessor(new CreditCardPayment());
 console.log(processor.processPayment(100));

@@ -3,7 +3,7 @@
  * but allows subclasses to alter the type of objects that will be created.
  * 
  * Easy definition: A factory is an object that creates other objects.
-*/
+ */
 
 interface Vehicle {
     name: string;
@@ -54,3 +54,4 @@ class VehicleFactory {
 }
 
 export { VehicleFactory, Car, Bike };
+

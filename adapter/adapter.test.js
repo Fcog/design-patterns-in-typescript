@@ -14,3 +14,4 @@ test('PaymentAdapter should process payments using the old payment processor', (
     'success from old payment processor'
   );
 });
+
